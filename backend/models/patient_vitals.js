@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+vitalReadingSchema.index({ patient_id: 1, recorded_at: -1 });
 // ─── Connection ───────────────────────────────────────────────────────────────
 
 mongoose.connect("mongodb://127.0.0.1:27017/patient_vitals")
