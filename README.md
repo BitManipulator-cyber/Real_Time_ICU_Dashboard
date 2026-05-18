@@ -21,7 +21,7 @@ graph TD
 
 ## Features
 
-- **Real-Time Vitals Streaming**: Uses Server-Sent Events (SSE) to push vitals data to the frontend every 5 seconds.
+- **Real-Time Vitals Streaming**: Uses Serer-Sent Events (SSE) to push vitals data to the frontend every 5 seconds.
 - **Dynamic Threshold Alerting**: Automatically evaluates patient vitals against customizable thresholds (Warning / Critical).
 - **Patient Severity Triage**: Patients are color-coded (RED, YELLOW, GREEN) based on their real-time alert status.
 - **Data Persistence**: Automatically stores vital readings and triggered alerts in a MongoDB database for historical analysis and deduplication.
