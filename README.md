@@ -8,13 +8,14 @@ The system follows a modern client-server architecture with Server-Sent Events (
 
 ```mermaid
 graph TD
-    Client[React Frontend] <-->|Server-Sent Events (SSE)| Server[Express.js Backend]
-    Server <-->|Mongoose ODM| DB[(MongoDB)]
+    Server["Express.js Backend"] -->|SSE Stream| Client["React Frontend"]
+    Client["React Frontend"] -->|REST API| Server["Express.js Backend"]
+    Server["Express.js Backend"] -->|Mongoose ODM| DB[("MongoDB")]
+    DB[("MongoDB")] -->|Persist & Query| Server["Express.js Backend"]
     
     subgraph Backend
-    Server
-    Simulator[Vitals Simulator/Jitter] --> Server
-    Alerting[Threshold Evaluation] --> Server
+    Simulator["Vitals Simulator"] -->|Jitter| Server
+    Alerting["Threshold Evaluation"] -->|Trigger Alerts| Server
     end
 ```
 
