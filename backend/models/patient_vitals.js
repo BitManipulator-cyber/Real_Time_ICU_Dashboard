@@ -14,9 +14,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/patient_vitals")
 
 const patientSchema = new mongoose.Schema({
     mrn: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+     required: true,
+     unique: true,
+     trim: true
     },
     name: {
         first: { type: String, required: true },
